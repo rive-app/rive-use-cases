@@ -1,0 +1,10 @@
+.rive-story-container {
+  background-color: #d6e2ea;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #000000;
+}

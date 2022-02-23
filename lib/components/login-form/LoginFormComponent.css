@@ -1,0 +1,87 @@
+:root {
+  --border-radius-1x: 2px;
+  --border-radius-2x: calc(var(--border-radius-1x) * 2);
+
+  --spacing-half: 4px;
+  --spacing-1x: 8px;
+  --spacing-2x: calc(var(--spacing-1x) * 2);
+  --spacing-3x: calc(var(--spacing-1x) * 3);
+  --spacing-4x: calc(var(--spacing-1x) * 4);
+
+  --font-size-16: 16px;
+  --login-form-el-height: 50px;
+
+  box-sizing: border-box;
+}
+
+.form-container {
+  height: 100%;
+  min-width: 350px;
+  margin: 0 auto;
+  border-radius: var(--border-radius-2x);
+  background-color: #ffffff;
+  padding: var(--spacing-4x);
+  box-sizing: border-box;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: var(--spacing-half);
+  box-sizing: border-box;
+}
+
+.form-container input {
+  height: var(--login-form-el-height);
+  width: 100%;
+  box-sizing: border-box;
+  line-height: var(--login-form-el-height);
+  font-size: var(--font-size-16);
+  color: #000000;
+  background-color: #f1f1f1;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  cursor: text;
+  border: none;
+  border-radius: var(--border-radius-1x);
+}
+
+.login-btn {
+  border: none;
+  padding: 0;
+
+  height: var(--login-form-el-height);
+  width: 100%;
+  text-align: center;
+  line-height: var(--login-btn-height);
+  font-size: var(--font-size-16);
+  border-radius: 0 0 10px 10px;
+  margin: 0 0 var(--spacing-2x);
+
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #303030;
+  color: #f1f1f1;
+}
+
+.rive-container-container {
+  width: 100%;
+}
+
+.rive-container {
+  min-height: 300px;
+  min-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 959px) {
+  .form-container input {
+    max-width: 340px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .form-container input {
+    width: 340px;
+  }
+}
