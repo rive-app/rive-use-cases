@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof LoginFormComponent>;
 
 const Template: ComponentStory<typeof LoginFormComponent> = (args) => (
-  <div className="rive-story-container">
+  <div className="rive-story-container-login">
     <LoginFormComponent {...args} />
   </div>
 );

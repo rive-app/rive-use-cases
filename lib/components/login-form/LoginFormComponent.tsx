@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, SyntheticEvent } from 'react';
 import {
   useRive,
   useStateMachineInput,
@@ -7,13 +7,14 @@ import {
   Alignment,
   UseRiveParameters,
   RiveState,
+  StateMachineInput,
 } from 'rive-react';
 import './LoginFormComponent.css';
 
 const SM_NAME = 'Login Machine';
 const LOGIN_PASSWORD = 'teddy';
 
-export default (riveProps: UseRiveParameters = {}) => {
+const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
   const { rive: riveInstance, RiveComponent }: RiveState = useRive({
     src: 'login-teddy.riv',
     stateMachines: SM_NAME,
@@ -27,18 +28,26 @@ export default (riveProps: UseRiveParameters = {}) => {
   const [userValue, setUserValue] = useState('');
   const [passValue, setPassValue] = useState('');
 
-  const isCheckingInput = useStateMachineInput(
+  const isCheckingInput: StateMachineInput = useStateMachineInput(
     riveInstance,
     SM_NAME,
     'isChecking'
   );
-  const numLookInput = useStateMachineInput(riveInstance, SM_NAME, 'numLook');
+  const numLookInput: StateMachineInput = useStateMachineInput(
+    riveInstance,
+    SM_NAME,
+    'numLook'
+  );
   const trigSuccessInput = useStateMachineInput(
     riveInstance,
     SM_NAME,
     'trigSuccess'
   );
-  const trigFailInput = useStateMachineInput(riveInstance, SM_NAME, 'trigFail');
+  const trigFailInput: StateMachineInput = useStateMachineInput(
+    riveInstance,
+    SM_NAME,
+    'trigFail'
+  );
   const isHandsUpInput = useStateMachineInput(
     riveInstance,
     SM_NAME,
@@ -62,10 +71,11 @@ export default (riveProps: UseRiveParameters = {}) => {
     }
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e: SyntheticEvent) => {
     passValue === LOGIN_PASSWORD
       ? trigSuccessInput.fire()
       : trigFailInput.fire();
+    e.preventDefault();
     return false;
   };
 
@@ -75,7 +85,7 @@ export default (riveProps: UseRiveParameters = {}) => {
         <RiveComponent className="rive-container" />
       </div>
       <div className="form-container">
-        <form>
+        <form onSubmit={onSubmit}>
           <label>
             <input
               type="text"
@@ -103,12 +113,12 @@ export default (riveProps: UseRiveParameters = {}) => {
             />
           </label>
           <div>
-            <button type="button" className="login-btn" onClick={onSubmit}>
-              Login
-            </button>
+            <button className="login-btn">Login</button>
           </div>
         </form>
       </div>
     </div>
   );
 };
+
+export default LoginFormComponent;
