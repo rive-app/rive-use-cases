@@ -1,0 +1,28 @@
+.rive-component {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+
+  height: 100%;
+  min-width: 275px;
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+.row h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #000000;
+}
