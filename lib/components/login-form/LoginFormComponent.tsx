@@ -17,7 +17,7 @@ import {
 } from 'rive-react';
 import './LoginFormComponent.css';
 
-const SM_NAME = 'Login Machine';
+const STATE_MACHINE_NAME = 'Login Machine';
 const LOGIN_PASSWORD = 'teddy';
 const LOGIN_TEXT = 'Login';
 
@@ -29,7 +29,7 @@ const LOGIN_TEXT = 'Login';
 const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
   const { rive: riveInstance, RiveComponent }: RiveState = useRive({
     src: 'login-teddy.riv',
-    stateMachines: SM_NAME,
+    stateMachines: STATE_MACHINE_NAME,
     autoplay: true,
     layout: new Layout({
       fit: Fit.Cover,
@@ -45,27 +45,27 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
 
   const isCheckingInput: StateMachineInput = useStateMachineInput(
     riveInstance,
-    SM_NAME,
+    STATE_MACHINE_NAME,
     'isChecking'
   );
   const numLookInput: StateMachineInput = useStateMachineInput(
     riveInstance,
-    SM_NAME,
+    STATE_MACHINE_NAME,
     'numLook'
   );
-  const trigSuccessInput = useStateMachineInput(
+  const trigSuccessInput: StateMachineInput = useStateMachineInput(
     riveInstance,
-    SM_NAME,
+    STATE_MACHINE_NAME,
     'trigSuccess'
   );
   const trigFailInput: StateMachineInput = useStateMachineInput(
     riveInstance,
-    SM_NAME,
+    STATE_MACHINE_NAME,
     'trigFail'
   );
-  const isHandsUpInput = useStateMachineInput(
+  const isHandsUpInput: StateMachineInput = useStateMachineInput(
     riveInstance,
-    SM_NAME,
+    STATE_MACHINE_NAME,
     'isHandsUp'
   );
 
