@@ -53,6 +53,7 @@ const RiveRow: React.FC<RiveRowProps> = ({ isDownloadingAll, children }) => {
     }
   };
 
+  // If downloading all was clicked up the hierarchy, simulate load
   useEffect(() => {
     if (
       isDownloadingAll &&
