@@ -114,7 +114,7 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
 
   return (
     <div className="login-form-component-root">
-      <div>
+      <div className="login-form-wrapper">
         <div className="rive-wrapper">
           <RiveComponent className="rive-container" />
         </div>

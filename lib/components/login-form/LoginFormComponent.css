@@ -40,7 +40,6 @@
 .form-container input {
   height: var(--login-form-el-height);
   width: 100%;
-  max-width: 340px;
   box-sizing: border-box;
   line-height: var(--login-form-el-height);
   font-size: var(--font-size-16);
@@ -81,4 +80,9 @@
   min-width: 300px;
   width: 100%;
   margin: 0 auto;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 350px;
 }
