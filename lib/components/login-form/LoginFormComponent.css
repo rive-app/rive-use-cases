@@ -20,7 +20,7 @@
   color: #000000;
 
   height: 100%;
-  min-width: 350px;
+  min-width: 400px;
   margin: 0 auto;
 }
 
@@ -77,12 +77,12 @@
 
 .rive-container {
   min-height: 300px;
-  min-width: 300px;
+  min-width: 400px;
   width: 100%;
   margin: 0 auto;
 }
 
 .login-form-wrapper {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
 }
