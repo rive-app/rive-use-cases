@@ -1,0 +1,30 @@
+.download-all-btn {
+  background-image: linear-gradient(45deg, #ff5678, #d041ab);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 30%);
+  padding: 0 20px;
+  height: 40px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  align-self: end;
+}
+
+.download-all-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: rgb(51, 44, 44);
+}
+
+.loader-rows-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
