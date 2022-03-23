@@ -15,22 +15,22 @@ const RiveRow: React.FC<RiveRowProps> = ({ isDownloadingAll, children }) => {
     autoplay: true,
   });
 
-  const isHovered: StateMachineInput = useStateMachineInput(
+  const isHovered: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'isHovered'
   );
-  const isLoading: StateMachineInput = useStateMachineInput(
+  const isLoading: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'isLoading'
   );
-  const trigClicked: StateMachineInput = useStateMachineInput(
+  const trigClicked: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'isClicked'
   );
-  const numLoadingPercent: StateMachineInput = useStateMachineInput(
+  const numLoadingPercent: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'loadingPercent'
@@ -40,7 +40,7 @@ const RiveRow: React.FC<RiveRowProps> = ({ isDownloadingAll, children }) => {
   const simulateLoading = () => {
     if (isLoading && numLoadingPercent) {
       isLoading.value = true;
-      trigClicked.fire();
+      trigClicked!.fire();
       const mockLoadInterval = setInterval(function () {
         if (numLoadingPercent.value >= 100) {
           clearInterval(mockLoadInterval);
@@ -58,26 +58,26 @@ const RiveRow: React.FC<RiveRowProps> = ({ isDownloadingAll, children }) => {
     if (
       isDownloadingAll &&
       !isLoading?.value &&
-      numLoadingPercent?.value <= 0
+      numLoadingPercent!.value <= 0
     ) {
       simulateLoading();
     }
   }, [isDownloadingAll]);
 
   const onHovering = () => {
-    if (numLoadingPercent?.value < 100) {
-      isHovered.value = true;
+    if (numLoadingPercent!.value < 100) {
+      isHovered!.value = true;
     }
   };
 
   const onLeaving = () => {
-    if (numLoadingPercent?.value < 100) {
-      isHovered.value = false;
+    if (numLoadingPercent!.value < 100) {
+      isHovered!.value = false;
     }
   };
 
   const onClick = () => {
-    if (!isLoading.value) {
+    if (!isLoading!.value) {
       simulateLoading();
     }
   };

@@ -1,0 +1,7 @@
+.rating-button {
+  cursor: pointer;
+  background-color: transparent;
+  max-height: 100px;
+  max-width: 100px;
+  border: none;
+}

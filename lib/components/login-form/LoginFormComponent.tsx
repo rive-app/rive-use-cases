@@ -43,27 +43,27 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
   const [loginButtonText, setLoginButtonText] = useState(LOGIN_TEXT);
   const inputRef = useRef(null);
 
-  const isCheckingInput: StateMachineInput = useStateMachineInput(
+  const isCheckingInput: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'isChecking'
   );
-  const numLookInput: StateMachineInput = useStateMachineInput(
+  const numLookInput: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'numLook'
   );
-  const trigSuccessInput: StateMachineInput = useStateMachineInput(
+  const trigSuccessInput: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'trigSuccess'
   );
-  const trigFailInput: StateMachineInput = useStateMachineInput(
+  const trigFailInput: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'trigFail'
   );
-  const isHandsUpInput: StateMachineInput = useStateMachineInput(
+  const isHandsUpInput: StateMachineInput | null = useStateMachineInput(
     riveInstance,
     STATE_MACHINE_NAME,
     'isHandsUp'
@@ -74,7 +74,9 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
   // to help Teddy track progress along the input line
   useEffect(() => {
     if (inputRef?.current && !inputLookMultiplier) {
-      setInputLookMultiplier(inputRef.current.offsetWidth / 100);
+      setInputLookMultiplier(
+        (inputRef.current as HTMLInputElement).offsetWidth / 100
+      );
     }
   }, [inputRef]);
 
@@ -83,18 +85,18 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
   const onUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newVal = e.target.value;
     setUserValue(newVal);
-    if (!isCheckingInput.value) {
-      isCheckingInput.value = true;
+    if (!isCheckingInput!.value) {
+      isCheckingInput!.value = true;
     }
     const numChars = newVal.length;
-    numLookInput.value = numChars * inputLookMultiplier;
+    numLookInput!.value = numChars * inputLookMultiplier;
   };
 
   // Start Teddy looking in the correct spot along the username input
   const onUsernameFocus = () => {
-    isCheckingInput.value = true;
-    if (numLookInput.value !== userValue.length * inputLookMultiplier) {
-      numLookInput.value = userValue.length * inputLookMultiplier;
+    isCheckingInput!.value = true;
+    if (numLookInput!.value !== userValue.length * inputLookMultiplier) {
+      numLookInput!.value = userValue.length * inputLookMultiplier;
     }
   };
 
@@ -105,8 +107,8 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
     setTimeout(() => {
       setLoginButtonText(LOGIN_TEXT);
       passValue === LOGIN_PASSWORD
-        ? trigSuccessInput.fire()
-        : trigFailInput.fire();
+        ? trigSuccessInput!.fire()
+        : trigFailInput!.fire();
     }, 1500);
     e.preventDefault();
     return false;
@@ -129,7 +131,7 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
                 onFocus={onUsernameFocus}
                 value={userValue}
                 onChange={onUsernameChange}
-                onBlur={() => (isCheckingInput.value = false)}
+                onBlur={() => (isCheckingInput!.value = false)}
                 ref={inputRef}
               />
             </label>
@@ -140,8 +142,8 @@ const LoginFormComponent = (riveProps: UseRiveParameters = {}) => {
                 name="password"
                 placeholder="Password (shh.. it's 'teddy')"
                 value={passValue}
-                onFocus={() => (isHandsUpInput.value = true)}
-                onBlur={() => (isHandsUpInput.value = false)}
+                onFocus={() => (isHandsUpInput!.value = true)}
+                onBlur={() => (isHandsUpInput!.value = false)}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setPassValue(e.target.value)
                 }
