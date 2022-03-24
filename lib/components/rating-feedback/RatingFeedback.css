@@ -1,0 +1,123 @@
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.browser-shell {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.centered-content {
+  width: 100%;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 18%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.rating-prompt {
+  font-size: 32px;
+  line-height: 1;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  height: 45%;
+  max-height: 200px;
+}
+
+.rating-button-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  height: 20%;
+  max-height: 100px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.btn-container-isolated {
+  animation-duration: 5s;
+  animation-name: gap-gone;
+  gap: 0;
+}
+
+.rating-btn {
+  transition: width 3s linear, transform 3s linear, opacity 3s linear,
+    visibility 3s linear;
+  aspect-ratio: 1/1;
+}
+
+.rating-btn-right {
+  animation-duration: 3s;
+  animation-name: slide-right;
+  visibility: hidden;
+  opacity: 0;
+}
+
+button.rating-btn-right {
+  width: 0;
+  padding: 0;
+}
+
+.rating-btn-left {
+  animation-duration: 3s;
+  animation-name: slide-left;
+  visibility: hidden;
+  opacity: 0;
+}
+
+button.rating-btn-left {
+  width: 0;
+  padding: 0;
+}
+
+@keyframes slide-right {
+  from {
+    visibility: visible;
+    opacity: 1;
+    width: 100px;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100px);
+    width: 0;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    visibility: visible;
+    opacity: 1;
+    width: 100px;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes gap-gone {
+  from {
+    gap: inherit;
+  }
+  to {
+    gap: 0;
+  }
+}
