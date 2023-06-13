@@ -1,15 +1,15 @@
 # Rive Use Cases
 
-A package of React components built to showcase use-case examples for the Rive site. Includes Storybook to run and see these components independently. Can be publicized at some point so we can share the code of how these use cases are built out.
+This folder contains a number of different runtime use cases that demonstrate everything you can do with Rive, along with step-by-step tutorials that demonstrate how to create these experiences.
 
-## Getting Started
+For more inspiration, see [awesome-rive](https://github.com/rive-app/awesome-rive), a repository dedicated to amazing things created with Rive.
 
-### Installation
+### Pull To Refresh
 
-- Run `npm install`
+{TODO VIDEO}
 
-### Run locally via Storybook
+- [Code](pull-to-refresh)
+- [Tutorials](TODO)
 
-- Run `npm run sb`
-- A browser tab should open with the Storybook instance open, showing a number of use cases to play around with
-- Any changes locally made should reflect while the webpack server that powers Storybook is still running (unless you change Storybook config itself)
+### Other Use Cases
+See the [root folder](../) for more examples.
