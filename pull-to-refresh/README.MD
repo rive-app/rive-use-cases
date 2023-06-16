@@ -5,7 +5,7 @@ This folder contains examples that demonstrate how to create a pull to refresh e
 See this [video playlist](https://www.youtube.com/playlist?list=PLujDTZWVDSsHff0U3Q5Wo7uImQpGn4tMd) for tutorials on how to build this animation and integrate it on the listed platforms.
 
 ### Platforms (Code Samples)
-- iOS (SwiftUI): [code](ios/), [video tutorial](https://youtu.be/6oYH-JLupDk)
+- iOS (SwiftUI): [code](ios/), [video tutorial](https://www.youtube.com/watch?v=j5ISLdXhU6I)
 - Android (Jetpack Compose): [code](android/), [video tutorial](https://youtu.be/5JiBNXAR6sg)
 - Flutter: [code](flutter/), [video tutorial](https://youtu.be/IlZpFIKOI60)
 
