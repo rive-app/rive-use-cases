@@ -2,10 +2,10 @@
 
 This folder contains an example that demonstrates how to create an interactive avatar builder experience with Rive for applications on web, mobile, and more! With this demo project, you can select different avatar traits to change, ranging from the body color, the eyes, and the hair, to the color of the backdrop for the avatar, and see the changed traits reflect immediately.
 
-See this [video playlist TODO](https://youtube.com/playlist?list=PLujDTZWVDSsFnqEdfIi6v238EVbdKV93L) for tutorials on how to build this animation and integrate it on the listed platforms.
+See this [video playlist](https://www.youtube.com/playlist?list=PLujDTZWVDSsFdHbrnBCqLZ5aAb5o2HrIP) for tutorials on how to build this animation and integrate it on the listed platforms.
 
 ### Platforms (Code Samples)
-- Web (React): [code](react/), [video tutorial TODO](https://youtu.be/_s1zuX7hn_U)
+- Web (React): [code](react/), [video tutorial](https://youtu.be/Qr7Ng6fpqnk?si=1subLGm1n1FQnY5B)
 
 See the [Rive documentation](https://help.rive.app/runtimes/overview) for additional runtime information.
 
