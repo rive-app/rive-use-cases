@@ -7,6 +7,8 @@ See this [video playlist](https://www.youtube.com/playlist?list=PLujDTZWVDSsFdHb
 ### Platforms (Code Samples)
 - Web (React): [code](react/), [video tutorial](https://youtu.be/Qr7Ng6fpqnk?si=1subLGm1n1FQnY5B)
 
+Community Rive file: [https://rive.app/community/6236-12108-avatar-creator/](https://rive.app/community/6236-12108-avatar-creator/)
+
 See the [Rive documentation](https://help.rive.app/runtimes/overview) for additional runtime information.
 
 ### Other Use Cases
