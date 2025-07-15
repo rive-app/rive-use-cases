@@ -13,6 +13,8 @@ A complete example demonstrating how to use [Parcel](https://parceljs.org/) to b
 **Features:**
 
 - Proper ad sizing with responsive layout
+- Runtime: Using the \*single variant of Rive's web runtime which bundles the Rive WASM library into a single JS package
+- Random graphic selection between multiple Rive files
 - Optimized bundle size for ad delivery
 - Google Ads meta tags and structure
 
@@ -20,7 +22,7 @@ A complete example demonstrating how to use [Parcel](https://parceljs.org/) to b
 
 - `src/index.html` - Ad container with proper meta tags
 - `src/index.ts` - Rive logic and setup
-- `assets/` - Rive files
+- `assets/` - Sample Rive files
 - `dist/` - Built ad files ready for Google Ads
 
 **Quick Start:**
