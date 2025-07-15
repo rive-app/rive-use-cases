@@ -6,7 +6,7 @@ This folder contains examples and resources for integrating Rive graphics into G
 
 ### Parcel Bundler Example
 
-**Location**: `examples/rive-google-ads-parcel/`
+**Location**: `rive-google-ads/examples/rive-google-ads-parcel/`
 
 A complete example demonstrating how to use [Parcel](https://parceljs.org/) to bundle Rive into a Google Ads-compatible format.
 
@@ -28,7 +28,7 @@ A complete example demonstrating how to use [Parcel](https://parceljs.org/) to b
 **Quick Start:**
 
 ```bash
-cd examples/rive-google-ads-parcel
+cd rive-google-ads/examples/rive-google-ads-parcel
 npm install
 npm run build
 ```
@@ -38,7 +38,7 @@ The built files in `dist/` can be zipped up and uploaded to Google as an HTML5 a
 **Testing Locally:**
 
 ```bash
-cd examples/rive-google-ads-parcel
+cd rive-google-ads/examples/rive-google-ads-parcel
 npm install
 npm run start
 ```
