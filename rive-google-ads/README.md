@@ -2,6 +2,8 @@
 
 This folder contains examples and resources for integrating Rive graphics into Google Ads app campaigns.
 
+Watch the <a href="https://www.youtube.com/watch?v=3BuWozlygJM&t=2s" target="_blank">video tutorial</a>.
+
 ## Examples
 
 ### Parcel Bundler Example
